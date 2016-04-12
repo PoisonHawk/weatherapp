@@ -1,111 +1,99 @@
-.error{
-	color:red;
-}
+.error {
+  color: red; }
 
-html{
-	height: 100%;
-}
+html {
+  height: 100%; }
 
-body{
-	position:relative;
-	height:100%;
-}
+body {
+  position: relative;
+  height: 100%;
+  margin: 0; }
 
-.main{
-	position: relative;
-	max-width: 1000px;
-	height: 600px;
-	margin: 100px auto; 
-	border: 5px;
-	box-shadow:  0 0 10px rgba(0,0,0,0.5);
-	background: url('http://meloumusic.net/wp-content/uploads/2014/05/clouds-nature_00354581-1200x750.jpg') no-repeat center;	
-	background-size: cover;
-}
+main {
+  background: url("http://meloumusic.net/wp-content/uploads/2014/05/clouds-nature_00354581-1200x750.jpg") no-repeat center;
+  background-size: cover;
+  height: 100%; }
 
-.top{	
-	height: 60%;
-}
+.top {
+  position: relative;
+  height: 70%;
+  width: 100%; }
 
-.city{
-	position: absolute;
-	top:30px;
-	right: 30px;
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 36px;
-}
+.bottom {
+  height: 30%;
+  background-color: #01a7a6;
+  width: 100%;
+  position: absolute;
+  bottom: 0; }
 
-.bottom{
-	height: 40%;
-	background-color: #01a7a6;
-	
-	width:100%;
-}
+.city {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 36px; }
 
-.big{
-	padding: 20px;
-	float:left;
-	width: 39%;
-	
-	div{
-		float: left;
-		width: 50%;		
-	}
-	
-	.left{
-		float: left;
-		
-		.temp{
-			font-size: 72px;
-		}
-		
-		#FC{
-			font-size: 72px;
-		}
-		#FC:hover{
-			cursor:pointer 
-		}
-		
-		.date{
-			font-size: 32px;
-			width: 100%;
-		}
-	}
-	
-	text-align: center;
-	
-	.weather{		
-		margin: 0 auto;
-		font-size: 60px;
-	}
-}
+.big {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px;
+  float: left;
+  width: 39%;
+  text-align: center; }
+  .big div {
+    float: left;
+    width: 50%; }
+  .big .left {
+    float: left; }
+    .big .left .temp {
+      font-size: 72px; }
+    .big .left #FC {
+      font-size: 72px; }
+    .big .left #FC:hover {
+      cursor: pointer; }
+    .big .left .date {
+      font-size: 32px;
+      width: 100%; }
+  .big .weather {
+    margin: 0 auto;
+    font-size: 60px; }
 
-.small{
-	float: left;
-	padding: 20px;
-	line-height: 50px;
-	width: 10%;
-	text-align: center;
-	color: #555;
-	
-	.day_of_week{
-		background: rgba(255,255,255,0.3);		
-		border-radius: 15px;
-		margin: 10px auto;
-		padding: 5px 10px;
-		text-transform: uppercase;
-		font-size:18px;
-		font-weight:bold;
-		
-	}
-	.weather{
-		display: block;
-		margin: 10px auto;
-		font-size: 32px;		
-	}
-	.temp{
-		display: block;
-		margin: 10px auto;
-		font-size: 20px;
-	}
-}
+.small {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  padding: 20px;
+  line-height: 50px;
+  width: 10%;
+  text-align: center;
+  color: #444; }
+  .small .day_of_week {
+    background: rgba(255, 255, 255, 0.3);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    margin: 10px auto;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold; }
+  .small .weather, .small .temp {
+    display: block;
+    margin: 10px auto; }
+  .small .weather {
+    font-size: 32px; }
+  .small .temp {
+    font-size: 20px; }
+
+@media screen and (min-width: 360px) {
+  .small {
+    display: block; } }
+@media screen and (max-width: 360px) {
+  .small {
+    display: none; } }
+
+/*# sourceMappingURL=style.css.map */

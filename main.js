@@ -58,7 +58,7 @@ var app = {
 					}
 						$('#day_'+i+' .day_of_week').text(dayOfWeek);
 					
-					$('#day_'+i+' .temp').text(Math.floor(d.temp.eve));				
+					$('#day_'+i+' .temp').text(Math.floor(d.temp.day));				
 					
 					$('#day_'+i+' .weather').html('<i class="wi '+app.weatherIcons[d.weather[0].main]+'"></i>');	
 					i++;

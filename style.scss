@@ -1,0 +1,145 @@
+@mixin border-radius($radius){
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin box-sizing($value){
+	-webkit-box-sizing: $value;
+	-moz-box-sizing: $value;
+	box-sizing: $value;
+}
+
+.error{
+	color:red;
+}
+
+html{
+	height: 100%;
+}
+
+body{
+	position:relative;
+	height:100%;
+	margin: 0;
+}
+
+main{		
+	background: url('http://meloumusic.net/wp-content/uploads/2014/05/clouds-nature_00354581-1200x750.jpg') no-repeat center;	
+	background-size: cover;
+	height: 100%;
+}
+
+.top{	
+	position: relative;	
+	height: 70%;
+	width: 100%;
+}
+
+
+.bottom{
+	height: 30%;
+	background-color: #01a7a6;	
+	width:100%;
+	position: absolute;
+	bottom:0;
+}
+
+.city{
+	position: absolute;
+	top:30px;
+	right: 30px;
+	color: #fff;	
+	text-transform: uppercase;
+	font-size: 36px;
+}
+
+
+
+.big{
+	@include box-sizing(border-box);
+	padding: 20px;
+	float:left;
+	width: 39%;
+	
+	div{
+		float: left;
+		width: 50%;		
+	}
+	
+	.left{
+		float: left;
+		
+		.temp{
+			font-size: 72px;
+		}
+		
+		#FC{
+			font-size: 72px;
+		}
+		#FC:hover{
+			cursor:pointer 
+		}
+		
+		.date{
+			font-size: 32px;
+			width: 100%;
+		}
+	}
+	
+	text-align: center;
+	
+	.weather{		
+		margin: 0 auto;
+		font-size: 60px;
+	}
+}
+
+.small{
+	@include box-sizing(border-box);
+	float: left;
+	padding: 20px;
+	line-height: 50px;
+	width: 10%;
+	text-align: center;
+	color: #444;
+	
+	.day_of_week{
+		background: rgba(255,255,255,0.3);
+		@include border-radius(15px);
+		margin: 10px auto;
+		padding: 5px 10px;
+		text-transform: uppercase;
+		font-size:18px;
+		font-weight:bold;
+		
+	}
+
+	%templ{
+		display: block;
+		margin: 10px auto;
+	}
+
+	.weather{
+		@extend %templ;
+		font-size: 32px;		
+	}
+	.temp{
+		@extend %templ;
+		font-size: 20px;
+	}
+}
+
+
+@media screen and (min-width: 360px){
+	.small{
+		display:block;
+	}
+}
+
+@media screen and (max-width: 360px){
+	.small{
+		display:none;
+	}
+}
