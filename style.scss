@@ -61,6 +61,7 @@ main{
 		position:absolute;
 		bottom: 10px;
 		right:20px;
+		font-size:10px;
 	}
 
 .big{
@@ -149,12 +150,17 @@ main{
 
 @media screen and (max-width: 360px){
 
+	.bottom{
+		height:auto;
+	}
+
 	.big{
 		width: 100%;
 
 		.left{
-			font-size:80px;
-			line-height:1;
+			font-size:70px;
+			line-height:1.5;
+			padding-top:0;
 
 			.date{
 				font-size: 20px;
