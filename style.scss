@@ -98,12 +98,12 @@ main{
 
 .small{
 	@include box-sizing(border-box);
+	font-size: 46px;
 	float: left;
 	padding: 20px;
-	line-height: 50px;
+	line-height: 66px;
 	width: 10%;
-	text-align: center;
-	color: #444;
+	text-align: center;	
 	
 	.day_of_week{
 		background: rgba(255,255,255,0.3);
@@ -111,7 +111,7 @@ main{
 		margin: 10px auto;
 		padding: 5px 10px;
 		text-transform: uppercase;
-		font-size:18px;
+		font-size:24px;
 		font-weight:bold;
 		
 	}
@@ -122,12 +122,10 @@ main{
 	}
 
 	.weather{
-		@extend %templ;
-		font-size: 32px;		
+		@extend %templ;			
 	}
 	.temp{
-		@extend %templ;
-		font-size: 20px;
+		@extend %templ;		
 	}
 }
 

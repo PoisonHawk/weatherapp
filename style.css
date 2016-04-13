@@ -64,12 +64,12 @@ main {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  font-size: 46px;
   float: left;
   padding: 20px;
-  line-height: 50px;
+  line-height: 66px;
   width: 10%;
-  text-align: center;
-  color: #444; }
+  text-align: center; }
   .small .day_of_week {
     background: rgba(255, 255, 255, 0.3);
     -webkit-border-radius: 15px;
@@ -79,15 +79,11 @@ main {
     margin: 10px auto;
     padding: 5px 10px;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold; }
   .small .weather, .small .temp {
     display: block;
     margin: 10px auto; }
-  .small .weather {
-    font-size: 32px; }
-  .small .temp {
-    font-size: 20px; }
 
 @media screen and (min-width: 360px) {
   .small {
