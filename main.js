@@ -3,6 +3,8 @@ var app = {
 	key: 'f50761d988cbf1c851891908e4ce0829',
 	latitude: null,
 	longitude: null,
+	city:null,
+	countryCode:null,
 	daysEn : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
 	weatherIcons : {
 		'Clouds' : 'wi-cloudy',
@@ -12,13 +14,23 @@ var app = {
 	},
 	temp: 'celsius',
 	tempKelvin: [],
+	ip:true,
 
 	
 	setError: function(text){
 		$('.error').text(text).show();	
 	},
 		
-	getCurrentPosition: function(){
+	getCurrentPositionFromIp: function(){
+		$.getJSON('http://ipinfo.io', function(data){		 
+		  app.city = data.city,
+		  app.countryCode = data.country;
+		  app.getWeatherData();	
+		})
+
+	},
+
+	getCurrentPositionFromGeo: function(){
 		
 		navigator.geolocation.getCurrentPosition(function(position){
 			app.latitude = position.coords.latitude;
@@ -63,10 +75,17 @@ var app = {
 		return Math.floor(temp - 273.15);
 	},
 
+	getBackground: function(text){
+		console.log(text);
+	},
+
 	getWeatherData: function(){
 	
-	var targetUrl = 'http://api.openweathermap.org/data/2.5/forecast/daily?lat='+app.latitude+'&lon='+app.longitude+'&APPID='+app.key+'&callback=?';
-		
+	if (app.ip){
+			var targetUrl = 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+app.city+','+app.countryCode+'&APPID='+app.key+'&callback=?';
+	} else {
+		var targetUrl = 'http://api.openweathermap.org/data/2.5/forecast/daily?lat='+app.latitude+'&lon='+app.longitude+'&APPID='+app.key+'&callback=?';
+	}	
 			$.getJSON(targetUrl,{
 				format:'json',
 			}, function(data){
@@ -76,7 +95,7 @@ var app = {
 				
 				var i=0;
 				data.list.forEach(function(d){
-					// console.log(d);
+					console.log(d);
 					var cdate = new Date(d.dt*1000);
 									
 					$('#day_'+i+' .day').text(cdate.getDate());
@@ -95,10 +114,12 @@ var app = {
 					$('#day_'+i+' .weather').html('<i class="wi '+app.weatherIcons[d.weather[0].main]+'"></i>');	
 					i++;
 				})
+
 				$('#FC').click(function(){
 						app.changeTemp();
-					});
-				console.log(app.tempKelvin);
+					});		
+
+				app.getBackground(data.list[0].weather[0].main);			
 				
 			})
 			
@@ -108,20 +129,25 @@ var app = {
 	init: function(){
 		
 		$('.error').hide();
+				
+		if (app.ip)	{	
+				app.getCurrentPositionFromIp();
+		}else {	
+			if (navigator.geolocation){
 		
-		if (navigator.geolocation){
-	
-			app.getCurrentPosition();				
+				app.getCurrentPositionFromGeo();				
 
-		}else {
-			app.setError('Browser not supported geo Api');
-		}	
+			}else {
+				app.setError('Browser not supported geo Api');
+				app.getCurrentPositionFromIp();
+			}	
+		}		
 	}
 }
 
 
 $(document).ready(function(){
-	
+
 	app.init();
 	
 })

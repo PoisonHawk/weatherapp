@@ -70,14 +70,17 @@ main{
 	
 	.left{
 		float: left;
+		line-height: 105px;
+		font-size:96px;
+		padding-top: 20px;
 		
-		.temp{
-			font-size: 72px;
-		}
+		// .temp{
+		// 	font-size: 72px;
+		// }
 		
-		#FC{
-			font-size: 72px;
-		}
+		// #FC{
+		// 	font-size: 72px;
+		// }
 		#FC:hover{
 			cursor:pointer 
 		}
@@ -92,7 +95,8 @@ main{
 	
 	.weather{		
 		margin: 0 auto;
-		font-size: 60px;
+		font-size: 150px;
+		line-height:235px;
 	}
 }
 
