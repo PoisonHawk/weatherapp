@@ -102,6 +102,17 @@ main {
   .small {
     display: block; } }
 @media screen and (max-width: 360px) {
+  .big {
+    width: 100%; }
+    .big .left {
+      font-size: 80px;
+      line-height: 1; }
+      .big .left .date {
+        font-size: 20px; }
+    .big .weather {
+      font-size: 100px;
+      line-height: 1.5; }
+
   .small {
     display: none; } }
 

@@ -148,6 +148,25 @@ main{
 }
 
 @media screen and (max-width: 360px){
+
+	.big{
+		width: 100%;
+
+		.left{
+			font-size:80px;
+			line-height:1;
+
+			.date{
+				font-size: 20px;
+			}
+		}
+
+		.weather{
+			font-size:100px;
+			line-height:1.5;
+		}
+	}
+
 	.small{
 		display:none;
 	}
