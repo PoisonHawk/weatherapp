@@ -23,6 +23,7 @@ body{
 	position:relative;
 	height:100%;
 	margin: 0;
+	font-family: Tahoma, sans-serif;
 }
 
 main{		
@@ -44,6 +45,7 @@ main{
 	width:100%;
 	position: absolute;
 	bottom:0;
+	color: #333;
 }
 
 .city{
@@ -55,13 +57,17 @@ main{
 	font-size: 36px;
 }
 
-
+.designby{
+		position:absolute;
+		bottom: 10px;
+		right:20px;
+	}
 
 .big{
 	@include box-sizing(border-box);
 	padding: 20px;
 	float:left;
-	width: 39%;
+	width: 40%;
 	
 	div{
 		float: left;
@@ -70,17 +76,10 @@ main{
 	
 	.left{
 		float: left;
-		line-height: 105px;
-		font-size:96px;
+		line-height: 96px;
+		font-size:126px;
 		padding-top: 20px;
-		
-		// .temp{
-		// 	font-size: 72px;
-		// }
-		
-		// #FC{
-		// 	font-size: 72px;
-		// }
+
 		#FC:hover{
 			cursor:pointer 
 		}
@@ -128,8 +127,16 @@ main{
 	.weather{
 		@extend %templ;			
 	}
-	.temp{
-		@extend %templ;		
+	
+
+}
+
+@media screen and (max-width: 768px){
+	.small:nth-last-child(-n+3){
+		display:none;
+	}
+	.small{
+		width: 12.5%;
 	}
 }
 

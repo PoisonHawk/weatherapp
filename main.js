@@ -7,15 +7,27 @@ var app = {
 	countryCode:null,
 	daysEn : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
 	weatherIcons : {
-		'Clouds' : 'wi-cloudy',
-		'Rain':'wi-rain',
-		'Clear': 'wi-day-sunny',
-		'Snow': 'wi-snow',
+		'Clouds' : {
+			'background':'https://images.unsplash.com/uploads/1412455906842d646f1ce/7bf17d33?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=cfd6d4bc76c77f002a4628a76fb1efcb',
+			icon:'wi-cloudy'
+				},
+		'Rain': {
+			background:'https://images.unsplash.com/photo-1433863448220-78aaa064ff47?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=ce34d14f46dfb7fd2f885c16c6b48f3e',
+			icon: 'wi-rain',
+				},
+		'Clear': {
+				background:'https://images.unsplash.com/photo-1414269665217-a57681e266b3?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=6fd9f051bea811268593340698b6a822',
+				icon: 'wi-day-sunny',
+				},	
+		'Snow': {
+			background:'https://images.unsplash.com/photo-1447754147464-8b29cbf07166?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=259059c824f4009c3c31d84d55d83c5f',
+			icon:'wi-snow',
+				}
+
 	},
 	temp: 'celsius',
 	tempKelvin: [],
 	ip:true,
-
 	
 	setError: function(text){
 		$('.error').text(text).show();	
@@ -43,7 +55,9 @@ var app = {
 	
 		var date = new Date();
 		var h = date.getHours();
-		var m = date.getMinutes();		
+		h = h<10 ? '0'+ h : h;
+		var m = date.getMinutes();	
+		m = m <10 ? '0'+ m : m;
 		$('#time').text(h+':'+m);
 		setTimeout(app.setTime,1000);
 	},
@@ -77,6 +91,14 @@ var app = {
 
 	getBackground: function(text){
 		console.log(text);
+
+		console.log(app.weatherIcons[text].background);
+
+		if (typeof app.weatherIcons[text].background !== undefined){
+			$('main').css({
+				'background-image': 'url('+app.weatherIcons[text].background+')',
+			});
+		}
 	},
 
 	getWeatherData: function(){
@@ -111,7 +133,7 @@ var app = {
 
 					$('#day_'+i+' .temp').text(app.fromKelvinToCelsius(d.temp.day));				
 					
-					$('#day_'+i+' .weather').html('<i class="wi '+app.weatherIcons[d.weather[0].main]+'"></i>');	
+					$('#day_'+i+' .weather').html('<i class="wi '+app.weatherIcons[d.weather[0].main].icon+'"></i>');	
 					i++;
 				})
 
@@ -122,7 +144,6 @@ var app = {
 				app.getBackground(data.list[0].weather[0].main);			
 				
 			})
-			
 			
 	},
 	
