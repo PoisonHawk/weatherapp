@@ -1,3 +1,11 @@
+.big .left .date, .small .day_of_week {
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
+  padding: 5px 10px; }
+
 .error {
   color: red; }
 
@@ -22,22 +30,23 @@ main {
 
 .bottom {
   background-color: #01a7a6;
+  width: 100%;
   position: absolute;
   bottom: 0;
-  color: #333; }
+  color: rgba(255, 255, 255, 0.8); }
 
 .city {
   position: absolute;
-  top: 30px;
-  right: 30px;
-  color: #fff;
+  top: 3.125%;
+  right: 3.125%;
+  color: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
   font-size: 2.25em; }
 
 .designby {
   position: absolute;
-  bottom: 10px;
-  right: 20px;
+  bottom: 1%;
+  right: 2.0833333%;
   font-size: 0.625em; }
 
 .big {
@@ -47,42 +56,35 @@ main {
   padding: 2.0833333%;
   float: left;
   width: 40%;
+  font-size: 100%;
   text-align: center; }
   .big div {
     float: left;
     width: 50%; }
   .big .left {
     float: left;
-    font-size: 7.875em;
-    padding-top: 2.0833333%; }
+    font-size: 7.875em; }
     .big .left #FC:hover {
       cursor: pointer; }
     .big .left .date {
-      font-size: 2em;
+      font-size: 0.4em;
       width: 100%; }
   .big .weather {
     margin: 0 auto;
-    font-size: 150px;
-    line-height: 235px; }
+    font-size: 10em; }
 
 .small {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 46px;
+  font-size: 2.875em;
   float: left;
-  padding: 20px;
+  padding: 2.0833333%;
   line-height: 66px;
   width: 10%;
   text-align: center; }
   .small .day_of_week {
-    background: rgba(255, 255, 255, 0.3);
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    border-radius: 15px;
     margin: 10px auto;
-    padding: 5px 10px;
     text-transform: uppercase;
     font-size: 24px;
     font-weight: bold; }
@@ -90,6 +92,9 @@ main {
     display: block;
     margin: 10px auto; }
 
+@media screen and (max-width: 1373px) {
+  .big {
+    font-size: 85%; } }
 @media screen and (max-width: 768px) {
   .small:nth-last-child(-n+3) {
     display: none; }
