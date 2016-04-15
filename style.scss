@@ -30,19 +30,20 @@ main{
 	background: url('http://meloumusic.net/wp-content/uploads/2014/05/clouds-nature_00354581-1200x750.jpg') no-repeat center;	
 	background-size: cover;
 	height: 100%;
+	width:100%;
 }
 
 .top{	
 	position: relative;	
 	height: 70%;
-	width: 100%;
+	// width: 100%;
 }
 
 
 .bottom{
-	height: 30%;
+	
 	background-color: #01a7a6;	
-	width:100%;
+	// width:100%;
 	position: absolute;
 	bottom:0;
 	color: #333;
@@ -54,19 +55,19 @@ main{
 	right: 30px;
 	color: #fff;	
 	text-transform: uppercase;
-	font-size: 36px;
+	font-size: 2.25em;
 }
 
 .designby{
 		position:absolute;
 		bottom: 10px;
 		right:20px;
-		font-size:10px;
+		font-size:0.625em;
 	}
 
 .big{
 	@include box-sizing(border-box);
-	padding: 20px;
+	padding: 2.0833333%;
 	float:left;
 	width: 40%;
 	
@@ -77,16 +78,16 @@ main{
 	
 	.left{
 		float: left;
-		line-height: 96px;
-		font-size:126px;
-		padding-top: 20px;
+		// line-height: 6em;
+		font-size:7.875em;
+		padding-top: 2.0833333%;
 
 		#FC:hover{
 			cursor:pointer 
 		}
 		
 		.date{
-			font-size: 32px;
+			font-size: 2em;
 			width: 100%;
 		}
 	}
