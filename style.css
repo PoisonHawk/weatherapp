@@ -1,4 +1,4 @@
-.big .left .date, .small .day_of_week {
+.small .day_of_week {
   background: rgba(255, 255, 255, 0.3);
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
@@ -56,19 +56,19 @@ main {
   padding: 2.0833333%;
   float: left;
   width: 40%;
-  font-size: 100%;
-  text-align: center; }
-  .big div {
-    float: left;
-    width: 50%; }
+  font-size: 100%; }
   .big .left {
     float: left;
-    font-size: 7.875em; }
+    font-size: 7.875em;
+    width: 65%; }
     .big .left #FC:hover {
       cursor: pointer; }
     .big .left .date {
       font-size: 0.4em;
       width: 100%; }
+  .big .right {
+    float: right;
+    width: 35%; }
   .big .weather {
     margin: 0 auto;
     font-size: 10em; }
@@ -92,33 +92,39 @@ main {
     display: block;
     margin: 10px auto; }
 
-@media screen and (max-width: 1373px) {
-  .big {
-    font-size: 85%; } }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1160px) {
   .small:nth-last-child(-n+3) {
     display: none; }
 
+  .big {
+    width: 50%; }
+
   .small {
     width: 12.5%; } }
-@media screen and (min-width: 360px) {
-  .small {
-    display: block; } }
-@media screen and (max-width: 360px) {
-  .bottom {
-    height: auto; }
+@media screen and (max-width: 860px) {
+  .small:nth-last-child(-n+5) {
+    display: none; }
 
   .big {
+    width: 70%; }
+
+  .small {
+    width: 15%; } }
+@media screen and (max-width: 650px) {
+  .small:nth-last-child(-n+5) {
+    display: none; }
+
+  .big {
+    font-size: 80%; } }
+@media screen and (max-width: 550px) {
+  .big {
     width: 100%; }
-    .big .left {
-      font-size: 70px;
-      line-height: 1.5;
-      padding-top: 0; }
-      .big .left .date {
-        font-size: 20px; }
-    .big .weather {
-      font-size: 100px;
-      line-height: 1.5; }
+
+  .small {
+    display: none; } }
+@media screen and (max-width: 360px) {
+  .big {
+    font-size: 65%; }
 
   .small {
     display: none; } }

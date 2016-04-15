@@ -79,14 +79,10 @@ main{
 	width: 40%;
 	font-size:100%;
 	
-	div{
-		float: left;
-		width: 50%;		
-	}
-	
 	.left{
 		float: left;		
-		font-size:7.875em;		
+		font-size:7.875em;	
+		width:65%;	
 
 		#FC:hover{
 			cursor:pointer 
@@ -95,11 +91,16 @@ main{
 		.date{
 			font-size: 0.4em;
 			width: 100%;
-			@extend %date_decoration; 
+			// @extend %date_decoration; 
 		}
 	}
 	
-	text-align: center;
+	.right{
+		float:right;
+		width:35%;
+	}
+
+	// text-align: center;
 	
 	.weather{		
 		margin: 0 auto;
@@ -139,50 +140,76 @@ main{
 
 @media screen and (max-width: 1373px){
 	.big{
-		font-size:85%;
+		// font-size:85%;
 	}
 }
 
+@media screen and (max-width: 1160px){
+	.big{
+		// font-size:85%;
+	}
 
-@media screen and (max-width: 768px){
 	.small:nth-last-child(-n+3){
 		display:none;
 	}
+
+	.big{
+		width:50%;
+	}
+
 	.small{
 		width: 12.5%;
 	}
 }
 
 
-@media screen and (min-width: 360px){
+@media screen and (max-width: 860px){
+	.small:nth-last-child(-n+5){
+		display:none;
+	}
+
+	.big{
+		width:70%;
+	}
+
 	.small{
-		display:block;
+		width: 15%;
+	}
+}
+
+
+@media screen and (max-width: 650px){
+
+	.small:nth-last-child(-n+5){
+		display:none;
+	}
+
+
+	.big{
+		font-size:80%;
+		// width:100%;
+	}
+
+}
+
+
+@media screen and (max-width: 550px){
+
+	.big{
+		width: 100%;
+
+	}
+
+	.small{
+		display:none;
 	}
 }
 
 @media screen and (max-width: 360px){
 
-	.bottom{
-		height:auto;
-	}
-
 	.big{
-		width: 100%;
+		font-size:65%;
 
-		.left{
-			font-size:70px;
-			line-height:1.5;
-			padding-top:0;
-
-			.date{
-				font-size: 20px;
-			}
-		}
-
-		.weather{
-			font-size:100px;
-			line-height:1.5;
-		}
 	}
 
 	.small{
